@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Douglas Luthearia | Violinos, Violas e Arcos</title>
+
+<style>
+:root{
+  --bege:#f5deb3;
+  --laranja:#cd6921;
+  --preto:#000;
+  --branco:#fff;
+  --cinza:#f3f3f3;
+  --texto:#222;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bege);
+  color:var(--texto);
+  line-height:1.6;
+}
+
+header{
+  background:#000;
+  color:#fff;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.25);
+}
+
+.logo{
+  color:var(--bege);
+  font-size:25px;
+  font-weight:bold;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--laranja);
+}
+
+.hero{
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  color:#fff;
+
+  background:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+    linear-gradient(135deg,#cd6921,#000);
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.hero h1{
+  font-size:clamp(42px,8vw,75px);
+  line-height:1.05;
+  margin-bottom:25px;
+}
+
+.hero h2{
+  color:var(--bege);
+  font-size:clamp(20px,4vw,30px);
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:19px;
+  max-width:700px;
+  margin:0 auto 30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  margin:5px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn-orange{
+  background:var(--laranja);
+  color:#fff;
+}
+
+.btn-beige{
+  background:var(--bege);
+  color:#000;
+}
+
+.btn-black{
+  background:#000;
+  color:#fff;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  opacity:.9;
+}
+
+section{
+  padding:75px 7%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  max-width:700px;
+  margin:auto;
+}
+
+.about{
+  background:#fff;
+}
+
+.about-content{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  font-size:18px;
+}
+
+.products{
+  background:#000;
+  color:#fff;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.product-card{
+  background:#171717;
+  border:1px solid #333;
+  border-radius:18px;
+  overflow:hidden;
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-7px);
+  border-color:var(--laranja);
+}
+
+.product-image{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--bege);
+  color:#000;
+  font-size:75px;
+}
+
+.product-info{
+  padding:24px;
+}
+
+.product-info h3{
+  color:var(--bege);
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.product-info p{
+  color:#ddd;
+  margin-bottom:15px;
+}
+
+.price{
+  font-size:25px;
+  color:var(--laranja);
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.product-info small{
+  display:block;
+  color:#aaa;
+  margin-bottom:12px;
+}
+
+.highlight{
+  margin-top:40px;
+  padding:45px 25px;
+  text-align:center;
+  background:var(--laranja);
+  border-radius:20px;
+  color:#fff;
+}
+
+.highlight h2{
+  font-size:34px;
+  margin-bottom:15px;
+}
+
+.services{
+  background:var(--bege);
+}
+
+.service-card{
+  background:#fff;
+  padding:28px 22px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:45px;
+  margin-bottom:12px;
+}
+
+.other{
+  background:#fff;
+}
+
+.other .service-card{
+  border-top:4px solid var(--laranja);
+}
+
+.gallery{
+  background:var(--cinza);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:20px;
+}
+
+.gallery-item{
+  height:220px;
+  background:var(--bege);
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+  border:2px solid #e3c78e;
+}
+
+.gallery-note{
+  text-align:center;
+  margin-top:20px;
+  color:#666;
+}
+
+.contact{
+  background:#000;
+  color:#fff;
+  text-align:center;
+}
+
+.contact-box{
+  max-width:800px;
+  margin:auto;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.socials a{
+  background:#222;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:25px;
+}
+
+.socials a:hover{
+  background:var(--laranja);
+}
+
+footer{
+  background:#000;
+  color:#aaa;
+  text-align:center;
+  padding:25px;
+  border-top:1px solid #333;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:29px;
+  text-decoration:none;
+  box-shadow:0 5px 20px rgba(0,0,0,.3);
+  z-index:999;
+}
+
+@media(max-width:700px){
+
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+
+  nav a{
+    font-size:12px;
+  }
+
+  section{
+    padding:55px 5%;
+  }
+
+  .hero{
+    min-height:80vh;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header>
+
+  <div class="logo">
+    🎻 DOUGLAS LUTHEARIA
+  </div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#violinos">Violinos</a>
+    <a href="#violas">Violas</a>
+    <a href="#arcos">Arcos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <h2>Douglas Luthearia</h2>
+
+    <h1>
+      Violinos, Violas e Arcos de Alta Qualidade
+    </h1>
+
+    <p>
+      Instrumentos selecionados para estudantes,
+      músicos avançados e profissionais que valorizam
+      qualidade, sonoridade e acabamento.
+    </p>
+
+    <a
+      class="btn btn-orange"
+      href="https://wa.me/5518981170978?text=Olá!%20Vim%20pelo%20site%20da%20Douglas%20Luthearia."
+      target="_blank">
+      📱 Falar no WhatsApp
+    </a>
+
+    <a class="btn btn-beige" href="#violinos">
+      🎻 Ver catálogo
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section class="about">
+
+  <div class="section-title">
+
+    <h2>Sobre a Douglas Luthearia</h2>
+
+    <p>
+      Qualidade, cuidado e paixão pelos instrumentos de cordas.
+    </p>
+
+  </div>
+
+  <div class="about-content">
+
+    <p>
+      A <strong>Douglas Luthearia</strong> trabalha com
+      violinos, violas e arcos de alta qualidade,
+      oferecendo opções para diferentes níveis e necessidades
+      musicais.
+    </p>
+
+    <br>
+
+    <p>
+      Também realizamos serviços especializados de
+      luthieria, buscando preservar e melhorar o desempenho
+      de cada instrumento.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- VIOLINOS -->
+
+<section class="products" id="violinos">
+
+  <div class="section-title">
+
+    <h2>🎻 Violinos</h2>
+
+    <p>
+      Encontre o instrumento ideal para o seu momento musical.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <!-- EDITE O PREÇO AQUI -->
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Violino Estudante</h3>
+
+        <p>
+          Opção para quem está começando ou busca
+          um instrumento para estudos.
+        </p>
+
+        <small>Tamanho: 4/4</small>
+
+        <div class="price">
+          R$ 1.200,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20no%20Violino%20Estudante."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Violino Intermediário</h3>
+
+        <p>
+          Instrumento para músicos que procuram
+          evolução e maior qualidade sonora.
+        </p>
+
+        <small>Tamanho: 4/4</small>
+
+        <div class="price">
+          R$ 2.500,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20no%20Violino%20Intermediário."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Violino Profissional</h3>
+
+        <p>
+          Instrumento selecionado para músicos
+          que buscam alto nível de performance.
+        </p>
+
+        <small>Tamanho: 4/4</small>
+
+        <div class="price">
+          R$ 5.000,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20no%20Violino%20Profissional."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- VIOLAS -->
+
+<section class="products" id="violas">
+
+  <div class="section-title">
+
+    <h2>🎻 Violas</h2>
+
+    <p>
+      Instrumentos selecionados para músicos que procuram
+      a sonoridade característica da viola.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Viola Estudante</h3>
+
+        <p>
+          Uma opção para quem está iniciando
+          seus estudos na viola.
+        </p>
+
+        <small>Tamanho: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 1.800,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20na%20Viola%20Estudante."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Viola Intermediária</h3>
+
+        <p>
+          Instrumento para músicos que buscam
+          evolução e qualidade sonora.
+        </p>
+
+        <small>Tamanho: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 3.500,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20na%20Viola%20Intermediária."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🎻
+      </div>
+
+      <div class="product-info">
+
+        <h3>Viola Profissional</h3>
+
+        <p>
+          Para músicos que procuram desempenho,
+          projeção e acabamento diferenciado.
+        </p>
+
+        <small>Tamanho: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 6.000,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20na%20Viola%20Profissional."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ARCOS -->
+
+<section class="products" id="arcos">
+
+  <div class="section-title">
+
+    <h2>🏹 Arcos de Alta Qualidade</h2>
+
+    <p>
+      Arcos selecionados para acompanhar
+      o desempenho do seu instrumento.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🏹
+      </div>
+
+      <div class="product-info">
+
+        <h3>Arco para Violino</h3>
+
+        <p>
+          Opção selecionada para músicos que
+          buscam equilíbrio e precisão.
+        </p>
+
+        <small>Modelo: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 800,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20em%20um%20Arco%20para%20Violino."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🏹
+      </div>
+
+      <div class="product-info">
+
+        <h3>Arco Premium para Violino</h3>
+
+        <p>
+          Arco de alta qualidade para músicos
+          que procuram maior precisão e resposta.
+        </p>
+
+        <small>Modelo: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 1.800,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20no%20Arco%20Premium%20para%20Violino."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="product-image">
+        🏹
+      </div>
+
+      <div class="product-info">
+
+        <h3>Arco para Viola</h3>
+
+        <p>
+          Arco selecionado para acompanhar
+          instrumentos de diferentes níveis.
+        </p>
+
+        <small>Modelo: consulte disponibilidade</small>
+
+        <div class="price">
+          R$ 1.200,00
+        </div>
+
+        <a
+          class="btn btn-orange"
+          href="https://wa.me/5518981170978?text=Olá!%20Tenho%20interesse%20no%20Arco%20para%20Viola."
+          target="_blank">
+          Tenho interesse
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="highlight">
+
+    <h2>🏹 Qualidade para acompanhar sua música</h2>
+
+    <p>
+      Trabalhamos com arcos de alta qualidade para
+      violino e viola, buscando equilíbrio, precisão
+      e excelente resposta durante a execução.
+    </p>
+
+    <br>
+
+    <a
+      class="btn btn-beige"
+      href="https://wa.me/5518981170978?text=Olá!%20Quero%20conhecer%20os%20arcos%20disponíveis."
+      target="_blank">
+      Consultar arcos disponíveis
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- SERVIÇOS -->
+
+<section class="services" id="servicos">
+
+  <div class="section-title">
+
+    <h2>🛠️ Serviços de Luthieria</h2>
+
+    <p>
+      Cuidado especializado para preservar
+      o desempenho do seu instrumento.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="service-card">
+      <div class="icon">🎻</div>
+      <h3>Regulagem de Violino</h3>
+      <p>
+        Ajustes para melhorar conforto,
+        resposta e tocabilidade.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎻</div>
+      <h3>Regulagem de Viola</h3>
+      <p>
+        Ajustes e cuidados específicos
+        para a viola.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🎼</div>
+      <h3>Troca de Cordas</h3>
+      <p>
+        Troca e orientação para escolha
+        das cordas.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">📐</div>
+      <h3>Ajuste de Cavalete</h3>
+      <p>
+        Ajustes para melhorar o funcionamento
+        e a resposta do instrumento.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">✨</div>
+      <h3>Restauração</h3>
+      <p>
+        Cuidados e recuperação de instrumentos
+        que precisam de atenção especial.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">🔎</div>
+      <h3>Avaliação</h3>
+      <p>
+        Avaliação do estado e das necessidades
+        do instrumento.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- OUTROS INSTRUMENTOS -->
+
+<section class="other">
+
+  <div class="section-title">
+
+    <h2>🎸 Outros Instrumentos</h2>
+
+    <p>
+      Também realizamos ajustes e manutenção
+      em outros instrumentos de cordas.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="service-card">
+
+      <div class="icon">🎸</div>
+
+      <h3>Violão de 6 Cordas</h3>
+
+      <p>
+        Regulagem, troca de cordas
+        e pequenos ajustes.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="icon">🎸</div>
+
+      <h3>Guitarra</h3>
+
+      <p>
+        Regulagem, oitavas e manutenção
+        preventiva.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="icon">🎵</div>
+
+      <h3>Contrabaixo</h3>
+
+      <p>
+        Ajustes, regulagem e manutenção.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALERIA -->
+
+<section class="gallery">
+
+  <div class="section-title">
+
+    <h2>📸 Galeria</h2>
+
+    <p>
+      Alguns exemplos do universo da
+      Douglas Luthearia.
+    </p>
+
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item">🎻</div>
+
+    <div class="gallery-item">🎻</div>
+
+    <div class="gallery-item">🏹</div>
+
+    <div class="gallery-item">🎸</div>
+
+  </div>
+
+  <p class="gallery-note">
+    Em breve, substitua estes espaços pelas
+    fotos reais dos seus produtos e trabalhos.
+  </p>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section class="contact" id="contato">
+
+  <div class="contact-box">
+
+    <div class="section-title">
+
+      <h2>Entre em contato</h2>
+
+      <p>
+        Quer saber disponibilidade, preços ou
+        conhecer nossos instrumentos?
+        Fale conosco.
+      </p>
+
+    </div>
+
+    <a
+      class="btn btn-orange"
+      href="https://wa.me/5518981170978?text=Olá!%20Vim%20pelo%20site%20da%20Douglas%20Luthearia."
+      target="_blank">
+      📱 WhatsApp
+    </a>
+
+
+    <div class="socials">
+
+      <a
+        href="https://www.instagram.com/luthierdouglas?stkn=MW9idzF6cDkzbmRxag=="
+        target="_blank">
+        Instagram
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@luthierdouglasantiqueira?_r=1&_t=ZS-99jMCGaRMx6"
+        target="_blank">
+        TikTok
+      </a>
+
+      <a
+        href="https://www.facebook.com/share/14o2E8Y92zf/?mibextid=wwXIfr"
+        target="_blank">
+        Facebook
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <p>
+    © 2026 Douglas Luthearia
+  </p>
+
+  <p>
+    Violinos • Violas • Arcos • Luthieria
+  </p>
+
+</footer>
+
+
+<!-- BOTÃO WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/5518981170978?text=Olá!%20Vim%20pelo%20site%20da%20Douglas%20Luthearia."
+  target="_blank"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+</body>
+</html>
